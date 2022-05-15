@@ -24,5 +24,9 @@
     "inquirer": "^8.2.4",
     "install": "^0.13.0",
     "jest": "^28.1.0"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {}
 }
