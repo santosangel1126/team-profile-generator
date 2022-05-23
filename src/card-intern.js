@@ -1,11 +1,11 @@
 // intern template 
-const internCard = (profile) => `
+const internCard = (profile) => 
 <div class="card m-3 shadow" style="width: 300px">
     <div class="card-header bg-primary text-white">
         <p class='h3'>${profile.getName()}</p>
         <p class="h4">
             <i class="fas fa-user-graduate mr-1"></i>
-            ${profile,getRole()}
+            ${profile.getRole()}
         </p>
     </div>
     <div class="card-body bg-light">
@@ -21,6 +21,4 @@ const internCard = (profile) => `
         </ul>
          </div>
 </div>
-`;
-
-
+;
