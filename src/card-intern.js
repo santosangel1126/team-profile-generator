@@ -22,3 +22,4 @@ const internCard = (profile) =>
          </div>
 </div>
 ;
+module.exports = internCard;

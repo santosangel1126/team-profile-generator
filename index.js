@@ -32,7 +32,7 @@ const addManager = [
 },
 {
     name:"id",
-    type:"input"
+    type:"input",
     message: "What is your employee ID: (Required)",
     validate: (idInput) => {
         if (idInput) {
@@ -46,7 +46,7 @@ const addManager = [
 {
     name: "email",
     type: "input",
-    message: "Please enter email address:"
+    message: "Please enter email address:",
 },
 {
     name: "officeNumber",
@@ -144,7 +144,7 @@ const addIntern = [
 questions(addManager);
 
 //cycle through questions when members are added 
-function questions (questionArr) {
+function questions (questionArr) 
     inquirer
     .prompt(questionArr)
     .then(member) => {
@@ -157,7 +157,7 @@ function questions (questionArr) {
             createProfiles(team);
         }
     }
-    .catch((err) => console.log(err));
+    catch(err) { => console.log(err);
   }
 
 
@@ -209,5 +209,5 @@ function generateHtml(profiles){
          if (err) throw err;
          console.log(" HTML document sucessfully created in the /dist folder");
      });
- }       
+ };   
  
