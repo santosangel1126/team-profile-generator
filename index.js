@@ -147,8 +147,9 @@ questions(addManager);
 function questions (questionArr) 
     inquirer
     .prompt(questionArr)
-    .then(member) => {
-        Team.push(member);
+    .then((member) => {
+        team.push(member);
+
         if (member.followUp === "Add Engineer"){
            questions(addEngineer);
         } else if (member.followUp === "Add Intern") {
@@ -156,8 +157,8 @@ function questions (questionArr)
         } else {
             createProfiles(team);
         }
-    }
-    catch(err) { => console.log(err);
+    })
+    .catch((err)  => console.log(err));
   }
 
 
@@ -209,5 +210,5 @@ function generateHtml(profiles){
          if (err) throw err;
          console.log(" HTML document sucessfully created in the /dist folder");
      });
- };   
+ } 
  
