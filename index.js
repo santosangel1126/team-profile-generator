@@ -52,14 +52,15 @@ const addManager = [
     name: "officeNumber",
     type: "input",
     message: "Please enter office number: (Required)",
-    validate (officeInput) => {
+    validate: (officeInput) =>  {
         if (officeInput) {
             return true;
         } else {
             console.log("Please enter office number!");
         }
     }
-}
+},
+
 {
     name: "followUp",
     type: "list",
@@ -95,7 +96,7 @@ const addManager = [
      {
          name:"github",
          type:"input",
-         message::"Please enter engineers github (Required)",
+         message:"Please enter engineers github (Required)",
          validate: (engGit) => {
              if (engGit) {
                  return true;
@@ -107,7 +108,7 @@ const addManager = [
      },
      {
          name:"followUp",
-         type: "list"
+         type: "list",
          choices:["Add Engineer","Add Intern","All done"],
          message:"What would you like to do next?",
      },
@@ -144,11 +145,11 @@ const addIntern = [
 questions(addManager);
 
 //cycle through questions when members are added 
-function questions (questionArr) 
+function questions (questionArr) {
     inquirer
     .prompt(questionArr)
     .then((member) => {
-        team.push(member);
+        Team.push(member);
 
         if (member.followUp === "Add Engineer"){
            questions(addEngineer);
@@ -158,9 +159,8 @@ function questions (questionArr)
             createProfiles(team);
         }
     })
-    .catch((err)  => console.log(err));
-  }
-
+    .catch((err)  => console.log(err)); 
+}
 
 function createProfiles(team) {
     const profiles = team.map((member) => {
@@ -202,7 +202,7 @@ function generateHtml(profiles){
 
     const newHtml = wrapProfileCards(profileCards);
 
-    writeHTML(newHtml);
+    writeHtml(newHtml);
 }
  // function to write final HTML document in dist folder 
  function writeHtml(newHtml);{
@@ -210,5 +210,5 @@ function generateHtml(profiles){
          if (err) throw err;
          console.log(" HTML document sucessfully created in the /dist folder");
      });
- } 
+    };
  
