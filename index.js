@@ -8,7 +8,7 @@ const intern = require("./lib/intern");
 const Manager = require("./lib/Manager");
 
 //Import HTML templates
-const addManagerCard = require(".src/card-manager");
+const addManagerCard = require("./src/card-manager");
 const addEngineerCard = require("./src/card-engineer");
  const addIternCard = require("./src/card-intern");
  const wrapProfileCards = require("./src/card-wrapper");
@@ -156,14 +156,14 @@ function questions (questionArr) {
         } else if (member.followUp === "Add Intern") {
             questions(addIntern);
         } else {
-            createProfiles(team);
+            createProfiles(Team);
         }
     })
     .catch((err)  => console.log(err)); 
 }
 
-function createProfiles(team) {
-    const profiles = team.map((member) => {
+function createProfiles(Team) {
+    const profiles = Team.map((member) => {
         const {name,id,email} = member;
         // adding manager
         if (member.hasOwnProperty("github")) {
@@ -205,7 +205,7 @@ function generateHtml(profiles){
     writeHtml(newHtml);
 }
  // function to write final HTML document in dist folder 
- function writeHtml(newHtml);{
+ function writeHtml(newHtml) {
      fs.writeFile("./dist/team-profile.html",newHtml, (err)=>{
          if (err) throw err;
          console.log(" HTML document sucessfully created in the /dist folder");

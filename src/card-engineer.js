@@ -1,5 +1,5 @@
 //Engineer Template
-const EngineerCard =(profile) =>
+const EngineerCard =(profile) => `
 <div class="card m-3 shadow" style="width: 300px">
     <div class="card-header bg-primary text-white">
         <p class="h3">${profile.getName()} </p>
@@ -25,5 +25,5 @@ const EngineerCard =(profile) =>
             </ul>
     </div>
 </div>
-;
+`;
  module.exports = EngineerCard;

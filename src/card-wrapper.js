@@ -33,4 +33,7 @@ const cardWrapper = (cards) =>`
             </div>
         </main>
     </body>
-    </html>`;
+    </html>
+    `;
+
+    module.exports = cardWrapper;
